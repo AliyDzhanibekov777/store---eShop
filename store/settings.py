@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-from whitenoise import WhiteNoise
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -138,7 +137,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # AUTH_USER_MODEL = 'users.Users'
 
 LOGIN_URL = '/users/login/'
-
-
-if not DEBUG:  # Убедитесь, что это только для production
-    application = WhiteNoise(application, static_root=STATIC_ROOT)
