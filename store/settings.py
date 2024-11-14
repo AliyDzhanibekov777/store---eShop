@@ -125,7 +125,7 @@ STATICFILES_DIRS = [
     # BASE_DIR / "eShop/static",
 ]
 
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'eShop/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
