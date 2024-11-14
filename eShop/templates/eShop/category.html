@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'eShop/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+<div class="container" style="min-height: 100vh;">
+    <div class="row mt-5 mb-5">
+
+        {% for product in products %}
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+            <div class="product-card">
+                <div class="product-thumb">
+                    <a href="#"><img src="{{ product.image.url }}" alt=""></a>
+                </div>
+                <div class="product-details">
+                    <h4>
+                        <a href="#">{{ product.name }}</a>
+                    </h4>
+                    <p class="product-excerpt">
+                        {{ product.description }}
+                    </p>
+                    <div class="product-bottom-details d-flex justify-content-between">
+                        <div class="product-price">
+                            ${{ product.price }}
+                        </div>
+                        <div class="product-links">
+                            <a href="{% url 'basket_add' product.id %}" class="btn btn-warning add-to-cart">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </a>
+                            <a href="{% url 'favourite_add' product.id %}" class="btn btn-warning add-to-cart">
+                                <i class="fa-solid fa-heart-circle-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

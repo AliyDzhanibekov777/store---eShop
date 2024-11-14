@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+{% extends 'eShop/base.html' %}
+
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+<main class="main">
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="static/eShop/img/imac.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Топ-10 гаджетов 2024 года</h1>
+                    <p>Откройте для себя лучшие новинки технологий, которые изменят ваш повседневный опыт.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="static/eShop/img/iphone-16 pro.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Умные часы с функцией здоровья </h1>
+                    <p>Следите за своим самочувствием с помощью современных смарт-часов</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="static/eShop/img/samsung-tv.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Умные телевизоры:</h1>
+                    <p>Обзор лучших смарт-ТВ</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="static/eShop/img/smart-sp.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Технологии для безопасности дома</h1>
+                    <p>Узнайте о новейших системах видеонаблюдения и умных замках</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <!-- <img src="{% static 'eShop/img/iphone-16.jpg' %}" class="d-block w-100" alt="..."> -->
+                <img src="static/eShop/img/iphone-16.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Беспроводные зарядные устройства</h1>
+                    <p>Переведите зарядку на новый уровень</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> <!--/.carousel-->
+
+    <section class="advantages">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <span>Наши преимущества</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row gy-5 items">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <p><i class="fas fa-shipping-fast"></i></p>
+                        <p class="txt-cart">Быстрая и бесплатная доставка</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <p><i class="fas fa-cubes"></i></p>
+                        <p class="txt-cart">Широкий ассортимент товаров</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <p><i class="fas fa-hand-holding-usd"></i></p>
+                        <p class="txt-cart">Приятные и конкурентные цены</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <p><i class="fa-solid fa-user-graduate"></i></p>
+                        <p class="txt-cart">Консультации от профессионалов</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section> <!--/advantages-->
+
+    <section class="featured-products">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <span>Рекомендуемые товары</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-hit">Hit</div>
+                                <div class="offer-new">Sale</div>
+                            </div>
+                            <div class="product-thumb">
+                                <a href="#"><img src="static/eShop/img/card/1.jpg" alt=""></a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">MacBook Air топ продаж этого лета</a>
+                                </h4>
+                                <p class="product-excerpt">
+                                    Успей приобрести по очень выгодной цене.
+                                </p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small>$2339</small>
+                                        $1990
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-warning add-to-cart">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-hit">Hit</div>
+                                <div class="offer-new">Sale</div>
+                            </div>
+                            <div class="product-thumb">
+                                <a href="#"><img src="static/eShop/img/card/card-iphone.png" alt=""></a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">iPhone 14 на 256 GB отдаем на 10% дешевле</a>
+                                </h4>
+                                <p class="product-excerpt">
+                                    У нас идут большие скидки на всю Apple технимку. Успевай
+                                </p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small>$939</small>
+                                        $779
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-warning add-to-cart">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-hit">Hit</div>
+                            </div>
+                            <div class="product-thumb">
+                                <a href="#"><img src="static/eShop/img/card/coffamash.jpg" alt=""></a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Кофемашинка от компании BORK лучший выбор</a>
+                                </h4>
+                                <p class="product-excerpt">
+                                    Для любителей начинать свой день с кофе, идеальное предложение
+                                </p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small>$690</small>
+                                        $599
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-warning add-to-cart">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-new">Sale</div>
+                            </div>
+                            <div class="product-thumb">
+                                <a href="#"><img src="static/eShop/img/card/tv.jpg" alt=""></a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Домашний кинотеатр в Full HD качестве</a>
+                                </h4>
+                                <p class="product-excerpt">
+                                    Samsung выпустила просто лучший телевизор, а мы отдаем его по очень выгодной
+                                    цене
+                                </p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small>$1099</small>
+                                        $899
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-warning add-to-cart">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-hit">Hit</div>
+                                <div class="offer-new">Sale</div>
+                            </div>
+                            <div class="product-thumb">
+                                <a href="#"><img src="static/eShop/img/card/111.png" alt=""></a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">MacBook 13 pro на M1 процессоре</a>
+                                </h4>
+                                <p class="product-excerpt">
+                                    Идеальное предложение как для офисных работников, так и для студентов
+                                </p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small>$2199</small>
+                                        $1999
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-warning add-to-cart">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-hit">Hit</div>
+                            </div>
+                            <div class="product-thumb">
+                                <a href="#"><img src="static/eShop/img/card/washing.png" alt=""></a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">LG покорили серца домохозяет</a>
+                                </h4>
+                                <p class="product-excerpt">
+                                    Предстваляем вам стиральную машинку имеющую функции сушильной машины
+                                </p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small>$499</small>
+                                        $399
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-warning add-to-cart">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-new">Sale</div>
+                            </div>
+                            <div class="product-thumb">
+                                <a href="#"><img src="static/eShop/img/card/keyboard.png" alt=""></a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Лучшая клавиатура для геймеров</a>
+                                </h4>
+                                <p class="product-excerpt">
+                                    Если вы проводите долгое время за компьютером, то предлагаем вам продукцию
+                                    LogiTech
+                                </p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small>$99</small>
+                                        $79
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-warning add-to-cart">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-offer">
+                                <div class="offer-hit">Hit</div>
+                                <div class="offer-new">Sale</div>
+                            </div>
+                            <div class="product-thumb">
+                                <a href="#"><img src="static/eShop/img/card/chair.png" alt=""></a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Компьютерное кресло для любителей комфорта</a>
+                                </h4>
+                                <p class="product-excerpt">
+                                    BMW среди компьютерных кресел
+                                </p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small>$299</small>
+                                        $179
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-warning add-to-cart">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                {% for product in products %}
+
+                {% if product.hit or product.sale %}
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-card-offer">
+                            {% if product.hit %}
+                            <div class="offer-hit">Hit</div>
+                            {% endif %}
+                            {% if product.sale %}
+                            <div class="offer-new">Sale</div>
+                            {% endif %}
+                        </div>
+                        <div class="product-thumb">
+                            <a href="#"><img src="{{ product.image.url }}" alt=""></a>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <a href="{% url 'reviews' product.id %}">Отзывы</a>
+                        </div>
+                        <div class="product-details">
+                            <h4>
+                                <a href="#">{{ product.name }}</a>
+                            </h4>
+                            <p class="product-excerpt">
+                                {{ product.description }}
+                            </p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>${{ product.old_price }}</small>
+                                    ${{ product.price }}
+                                </div>
+                                <div class="product-links">
+                                    <a href="{% url 'basket_add' product.id %}" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                    <a href="{% url 'favourite_add' product.id %}" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-heart-circle-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="{{ product.image.url }}" alt="">
+                                <h5>Технические характеристики:</h5>
+                                <p>
+                                    
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                {% endif %}
+
+                {% endfor %} <!--Тестовое вывод данных с переменной-->
+
+            </div>
+        </div>
+    </section> <!--/featured-products-->
+
+    <section class="new-products">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <span>Новинки</span>
+                    </h2>
+                </div>
+            </div>
+
+
+
+            <div class="owl-carousel owl-theme owl-carousel-full">
+                <!-- <div class="product-card">
+                        <div class="product-card-offer">
+                            <div class="offer-new">New</div>
+                        </div>
+                        <div class="product-thumb">
+                            <a href="#"><img src="static/eShop/img/card/1.jpg" alt=""></a>
+                        </div>
+                        <div class="product-details">
+                            <h4>
+                                <a href="#">MacBook Air топ продаж этого лета</a>
+                            </h4>
+                            <p class="product-excerpt">
+                                Успей приобрести по очень выгодной цене.
+                            </p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    $1990
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-offer">
+                            <div class="offer-new">New</div>
+                        </div>
+                        <div class="product-thumb">
+                            <a href="#"><img src="static/eShop/img/card/card-iphone.png" alt=""></a>
+                        </div>
+                        <div class="product-details">
+                            <h4>
+                                <a href="#">iPhone 14 на 256 GB отдаем на 10% дешевле</a>
+                            </h4>
+                            <p class="product-excerpt">
+                                У нас идут большие скидки на всю Apple технимку. Успевай
+                            </p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    $779
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-offer">
+                            <div class="offer-new">New</div>
+                        </div>
+                        <div class="product-thumb">
+                            <a href="#"><img src="static/eShop/img/card/coffamash.jpg" alt=""></a>
+                        </div>
+                        <div class="product-details">
+                            <h4>
+                                <a href="#">Кофемашинка от компании BORK лучший выбор</a>
+                            </h4>
+                            <p class="product-excerpt">
+                                Для любителей начинать свой день с кофе, идеальное предложение
+                            </p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    $599
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-offer">
+                            <div class="offer-new">New</div>
+                        </div>
+                        <div class="product-thumb">
+                            <a href="#"><img src="static/eShop/img/card/tv.jpg" alt=""></a>
+                        </div>
+                        <div class="product-details">
+                            <h4>
+                                <a href="#">Домашний кинотеатр в Full HD качестве</a>
+                            </h4>
+                            <p class="product-excerpt">
+                                Samsung выпустила просто лучший телевизор, а мы отдаем его по очень выгодной
+                                цене
+                            </p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    $899
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-offer">
+                            <div class="offer-new">New</div>
+                        </div>
+                        <div class="product-thumb">
+                            <a href="#"><img src="static/eShop/img/card/111.png" alt=""></a>
+                        </div>
+                        <div class="product-details">
+                            <h4>
+                                <a href="#">MacBook 13 pro на M1 процессоре</a>
+                            </h4>
+                            <p class="product-excerpt">
+                                Идеальное предложение как для офисных работников, так и для студентов
+                            </p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    $1999
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-offer">
+                            <div class="offer-new">New</div>
+                        </div>
+                        <div class="product-thumb">
+                            <a href="#"><img src="static/eShop/img/card/washing.png" alt=""></a>
+                        </div>
+                        <div class="product-details">
+                            <h4>
+                                <a href="#">LG покорили серца домохозяет</a>
+                            </h4>
+                            <p class="product-excerpt">
+                                Предстваляем вам стиральную машинку имеющую функции сушильной машины
+                            </p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    $399
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-offer">
+                            <div class="offer-new">New</div>
+                        </div>
+                        <div class="product-thumb">
+                            <a href="#"><img src="static/eShop/img/card/keyboard.png" alt=""></a>
+                        </div>
+                        <div class="product-details">
+                            <h4>
+                                <a href="#">Лучшая клавиатура для геймеров</a>
+                            </h4>
+                            <p class="product-excerpt">
+                                Если вы проводите долгое время за компьютером, то предлагаем вам продукцию
+                                LogiTech
+                            </p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    $79
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-offer">
+                            <div class="offer-new">New</div>
+                        </div>
+                        <div class="product-thumb">
+                            <a href="#"><img src="static/eShop/img/card/chair.png" alt=""></a>
+                        </div>
+                        <div class="product-details">
+                            <h4>
+                                <a href="#">Компьютерное кресло для любителей комфорта</a>
+                            </h4>
+                            <p class="product-excerpt">
+                                BMW среди компьютерных кресел
+                            </p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    $179
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" class="btn btn-warning add-to-cart">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                {% for product_new in products %}
+
+                {% if product_new.new %}
+
+                <div class="product-card">
+                    <div class="product-card-offer">
+                        <div class="offer-new">NEW</div>
+                    </div>
+                    <div class="product-thumb">
+                        <a href="#"><img src="{{ product_new.image.url }}" alt=""></a>
+                    </div>
+                    <div class="product-details">
+                        <h4>
+                            <a href="#">{{ product_new.name }}</a>
+                        </h4>
+                        <p class="product-excerpt">
+                            {{ product_new.description }}
+                        </p>
+                        <div class="product-bottom-details d-flex justify-content-between">
+                            <div class="product-price">
+                                ${{ product_new.price }}
+                            </div>
+                            <div class="product-links">
+                                <a href="{% url 'basket_add' product_new.id %}" class="btn btn-warning add-to-cart">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </a>
+                                <a href="{% url 'favourite_add' product_new.id %}" class="btn btn-warning add-to-cart">
+                                    <i class="fa-solid fa-heart-circle-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endif %}
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </section> <!--/new-products-->
+
+    <section class="about-us" id="about">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <span>О Нас</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <p>Загляните в наш магазин электроники и откройте для себя мир современных технологий!</p>
+                    <p>Наша миссия — предоставить клиентам широкий выбор высококачественной электроники, а также
+                        экспертизу и поддержку на каждом этапе покупки. Неважно, ищете ли вы новую технику для
+                        дома или хотите обновить свой гаджет, мы поможем вам сделать правильный выбор.</p>
+                    <p>У нас всегда актуальные акции и специальные предложения, а наш интернет-магазин
+                        обеспечивает удобный и безопасный шопинг 24/7.</p>
+                    <p>Присоединяйтесь к нашей семье технологических энтузиастов и наслаждайтесь миром инноваций
+                        вместе с нами!</p>
+                </div>
+            </div>
+        </div>
+    </section> <!--/about-us-->
+
+    <section class="google-maps" id="map">
+        <div class="container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2859.232972403291!2d42.04730269746127!3d44.22286169788089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4058014d563e4cfd%3A0x16077e174c5fd7eb!2zVG9wIHwg0JrQvtC80L_RjNGO0YLQtdGA0L3QsNGPINCw0LrQsNC00LXQvNC40Y8g0KfQtdGA0LrQtdGB0YHQuiB8INCa0YPRgNGB0Ysg0L_RgNC-0LPRgNCw0LzQvNC40YDQvtCy0LDQvdC40Y8sINGA0L7QsdC-0YLQvtGC0LXRhdC90LjQutC4LCDRiNC60L7Qu9CwINCy0LjQtNC10L7QsdC70L7Qs9C10YDQvtCy!5e0!3m2!1sru!2sru!4v1728558412028!5m2!1sru!2sru"
+                width="100%" height="500" style="border:0; display: block; box-shadow: 0 3px 3px rgba(0, 0, 0, .2);"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section> <!--/google-maps-->
+</main>
+{% endblock content %}
+
+{% block buttonHome %}
+<button id="top">
+    <i class="fa-solid fa-angles-up"></i>
+</button>
+{% endblock buttonHome %}

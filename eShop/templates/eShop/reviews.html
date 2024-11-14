@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'eShop/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+<div class="container mt-5 vh-100">
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="section-title">
+                <span>Отзывы о товаре</span>
+            </h2>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6 mb-5">
+            <form action="{% url 'reviews_add' %}" method="post" class="row g-4 mb-5 mt-2" id="form-contacts">
+
+                {% csrf_token %}
+
+                <div class="col-md-12">
+                    <label for="rating">Оценка товара</label>
+                    <input type="number" class="form-control" id="rating" placeholder="Ваша оценка">
+                </div>
+                <div class="col-md-12">
+                    <label for="comment">Напишите отзыв</label>
+                    <input type="text" class="form-control" id="comment" placeholder="Ваш отзыв">
+                </div>
+                <div class="col-md-12 mb-4">
+                    <button type="submit" class="btn btn-warning">Отправить</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% extends 'eShop/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <img src="{% static 'eShop/img/about/employes.jpg' %}" alt="">
+        </div>
+
+        <div class="col-md-6">
+            <!-- <h2 class="mb-4">Наша история</h2> -->
+            <h2 class="section-title mb-5">
+                <span>Наша история</span>
+            </h2>
+            <p style="color: black;">
+                Наш интернет-магазин электроники и бытовой техники родился из простой, но амбициозной мечты: сделать мир
+                современных технологий доступным для каждого. <br><br>
+                Мы начали свой путь в 2024 году, с небольшого склада и огромного желания предлагать качественные
+                товары по честным ценам. В те дни мы сами упаковывали заказы, отвечали на звонки и с нетерпением ждали
+                каждый новый заказ. <br><br>
+                С тех пор многое изменилось. Наш магазин вырос, мы расширили ассортимент, предлагая всё, что нужно для
+                комфортной и технологичной жизни: от смартфонов и ноутбуков до кухонных комбайнов и пылесосов. <br>
+                Но одно осталось неизменным: наша страсть к инновациям и желание сделать ваш опыт покупок максимально
+                комфортным. Мы постоянно работаем над улучшением сервиса, предлагаем удобные способы оплаты и доставки,
+                а также предоставляем компетентную консультацию, помогая вам выбрать идеальный гаджет для ваших
+                потребностей. <br><br>
+                Сегодня наш интернет-магазин - это не просто площадка для покупок, а сообщество людей, которые ценят
+                комфорт и технологии. Мы рады быть частью вашей жизни, помогая вам сделать ее ярче и проще с помощью
+                современных устройств! <br><br>
+            </p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <!-- <h2 class="mb-4">Наши ценности</h2> -->
+            <h2 class="section-title">
+                <span>Наши ценности</span>
+            </h2>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body" style="height: 200px;">
+                    <i class="fas fa-users fa-2x text-warning mb-3"></i>
+                    <h5 class="card-title">Клиент - наше все</h5>
+                    <p class="card-text">Мы стремимся предоставить лучший клиентский опыт.
+                        Ваше удовлетворение - это наш приоритет.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body" style="height: 200px;">
+                    <i class="fas fa-rocket fa-2x text-warning mb-3"></i>
+                    <h5 class="card-title">Постоянное развитие</h5>
+                    <p class="card-text">Мы постоянно ищем новые способы улучшения нашего магазина,
+                        расширяя ассортимент и предоставляя новые возможности для наших клиентов.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body" style="height: 200px;">
+                    <i class="fas fa-handshake fa-2x text-warning mb-3"></i>
+                    <h5 class="card-title">Доверие и прозрачность</h5>
+                    <p class="card-text">Мы строим наши отношения с клиентами на доверии и прозрачности.
+                        Вы можете быть уверены в качестве наших товаров и услуг.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <!-- <h2 class="mb-4">Наша команда</h2> -->
+            <h2 class="section-title">
+                <span>Наша команда</span>
+            </h2>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'eShop/img/about/employee_1.jpg' %}" alt="Исмаил" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Исмаил</h5>
+                    <p class="card-text">Исполняющий директор PR отдела</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'eShop/img/about/employee_2.jpg' %}" alt="Александр" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Александр</h5>
+                    <p class="card-text">Старший менеджер по продажам</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'eShop/img/about/employee_3.jpg' %}" alt="Роман" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Роман</h5>
+                    <p class="card-text">Начальник отдела кадров</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

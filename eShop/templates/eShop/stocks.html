@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends 'eShop/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid bg-dark text-white">
+    <div class="container">
+        <h1 class="display-4">Акции</h1>
+        <p class="lead">У нас всегда есть выгодные предложения и акции. Следите за обновлениями!</p>
+    </div>
+</div>
+
+<section class="container py-5">
+    <div class="row">
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Скидка 15% на ноутбуки</h5>
+                    <p class="card-text">Только для первых 100 покупателей. Спешите!</p>
+                    <a href="#" class="btn btn-primary">Узнать подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Бесплатная доставка на все товары</h5>
+                    <p class="card-text">При заказе на сумму от 5 000 рублей</p>
+                    <a href="#" class="btn btn-primary">Узнать подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Акция "Счастливый четверг"</h5>
+                    <p class="card-text">Каждый четверг скидка 10% на все товары в категории "Мобильные телефоны".</p>
+                    <a href="#" class="btn btn-primary">Узнать подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

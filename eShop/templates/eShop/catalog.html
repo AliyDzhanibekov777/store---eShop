@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'eShop/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+<div class="container" style="min-height: 100vh;">
+	<div class="row mt-5 mb-5">
+		<div class="col-12">
+			<h2 class="section-title">
+				<span>Категории товаров</span>
+			</h2>
+		</div>
+
+		{% for category in categories %}
+
+		<!-- <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+            <div class="product-card">
+                <h4><a href="{% url 'category' category.id %}">{{ category.name }}</a></h4>
+            </div>
+        </div> -->
+
+
+		<div class="col-lg-3 col-md-4 col-sm-6 mb-3 mt-4">
+			<div class="card" id="catalog-card">
+				<a href="{% url 'category' category.id %}"
+					class="card-body d-flex justify-content-center align-items-center" style="text-decoration: none;">
+					<img src="{{ category.image.url }}" style="max-width: 100px; max-height: 100px;" alt="">
+					<h4 class="card-title">{{ category.name }}</h4>
+				</a>
+			</div>
+		</div>
+
+		{% endfor %}
+
+	</div>
+</div>
+{% endblock content %}

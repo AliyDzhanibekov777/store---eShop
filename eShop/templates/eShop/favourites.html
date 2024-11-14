@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% extends 'eShop/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container mt-5 mb-5" style="min-height: 700px;">
+
+    {% if favourites %}
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="section-title">
+                <span>Избранное</span>
+            </h2>
+        </div>
+    </div>
+
+    <div class="row">
+
+        {% for favourite in favourites %}
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+            <div class="product-card">
+                <div class="product-thumb">
+                    <a href="#"><img src="{{ favourite.product.image.url }}" alt=""></a>
+                </div>
+                <div class="product-details">
+                    <h4>
+                        <a href="#">{{ favourite.product.name }}</a>
+                    </h4>
+                    <p class="product-excerpt">
+                        {{ favourite.product.description }}  
+                        <!-- <input type="number" name="basketID" class="form-control" value="{{ basket.quantity }}" min="0">   -->                                       
+                    </p>
+                    <div class="product-bottom-details d-flex justify-content-between">
+                        <span>x{{ favourite.quantity }}</span>
+                        <div class="product-price">
+                            ${{ favourite.sum }}
+                        </div> 
+                        
+                        <!-- <div class="product-links">
+                            <a href="#" class="btn btn-warning add-to-cart">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </a>
+                        </div> -->
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <a href="{% url 'fav_in_bas' favourite.product_id %}" class="btn btn-warning add-to-cart">
+                            Добавить в корзину
+                        </a>
+                        <a href="{% url 'favourite_remove' favourite.id %}" class="btn btn-danger add-to-cart">
+                            Удалить
+                        </a>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+      
+        <div class="mt-5 mb-5">
+            <!-- <div class="d-flex justify-content-start mt-2">
+                <h5>
+                    Колличество товаров: <span style="font-size: 23px; font-weight: bold; color: #ffc107;">{{ total_quantity }}</span>
+                </h5>
+            </div> -->
+            <div class="d-flex justify-content-start mt-2">
+                <h5>
+                    Итоговая сумма: <span style="font-size: 23px; font-weight: bold; color: #ffc107;">${{ favourites.total_sum }}</span>
+                </h5>
+            </div> 
+            
+            <!-- <div class="d-flex justify-content-start mt-4">
+                <a href="{% url 'fav_in_bas' favourites.first.product_id %}" class="btn btn-warning">
+                    Добавить в корзину
+                </a>   
+            </div> -->
+        </div>       
+    </div>
+
+    {% else %}
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="section-title">
+                <span>Корзина избранных пуста</span>
+            </h2>
+        </div>
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+{% endblock %}

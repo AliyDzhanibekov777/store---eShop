@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% extends 'eShop/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+
+<section>
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-5">
+
+                {% if form.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ form.errors }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+
+                <div class="card" style="box-shadow: 0 5px 5px rgba(13, 11, 9, 0.2);">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4 mt-3">Регистрация</h2>
+                        <form action="{% url 'register' %}" method="POST">
+
+                            {% csrf_token %}
+
+                            <div class="form-group mt-3">
+                                <label class="form-label" for="{{ form.first_name.id_for_lable }}">
+                                    Имя
+                                </label>
+                                {{ form.first_name }}
+                            </div>
+                            <div class="form-group mt-3">
+                                <label class="form-label" for="{{ form.last_name.id_for_lable }}">
+                                    Фамилия
+                                </label>
+                                {{ form.last_name }}
+                            </div>
+                            <div class="form-group mt-3">
+                                <label class="form-label" for="{{ form.username.id_for_lable }}">Имя
+                                    пользователя</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="form-group mt-3">
+                                <label class="form-label" for="{{ form.email.id_for_lable }}">Почта</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="form-group mt-3">
+                                <label class="form-label" for="{{ form.password1.id_for_lable }}">Пароль</label>
+                                {{ form.password1 }}
+                            </div>
+                            <div class="form-group mt-3">
+                                <label class="form-label" for="{{ form.password2.id_for_lable }}">
+                                    Подтверждение пароля
+                                </label>
+                                {{ form.password2 }}
+                            </div>
+                            <button type="submit" class="btn btn-warning mb-4 mt-5 d-flex justify-content-center "
+                                style="width: 50%; margin: auto;">Зарегистрироваться</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
+
+
+
+<!-- <div class="register-form">
+        <div class="container-reg">
+            <h1>Форма регистрации</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="callback" type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div> -->
+<!-- <div class="form-container register-container">
+        <form action="#" method="POST">
+            <h1>Регистрация</h1>
+            <input type="text" placeholder="Имя" name="name" required />
+            <input type="email" placeholder="Электронная почта" name="email" required />
+            <input type="password" placeholder="Пароль" name="password" required />
+            <button type="submit">Зарегистрироваться</button>
+            <span>Уже есть аккаунт? <a href="#">Войти</a></span>
+        </form>
+    </div> -->
