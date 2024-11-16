@@ -381,8 +381,8 @@
                         <div class="product-thumb">
                             <a href="#"><img src="{{ product.image.url }}" alt=""></a>
                         </div>
-                        <div class="d-flex justify-content-end">
-                            <a href="{% url 'reviews' product.id %}">Отзывы</a>
+                        <div class="d-flex justify-content-start views-a">
+                            <a href="{% url 'reviews_add' product.id %}">Отзывы</a>
                         </div>
                         <div class="product-details">
                             <h4>
@@ -681,6 +681,9 @@
                     </div>
                     <div class="product-thumb">
                         <a href="#"><img src="{{ product_new.image.url }}" alt=""></a>
+                    </div>
+                    <div class="d-flex justify-content-start views-a">
+                        <a href="{% url 'reviews_add' product_new.id %}">Отзывы</a>
                     </div>
                     <div class="product-details">
                         <h4>

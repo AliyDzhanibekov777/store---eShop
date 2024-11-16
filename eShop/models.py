@@ -11,6 +11,10 @@ class ProductCategory(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+    
     
 class Product(models.Model):
     name = models.CharField(max_length=256)
@@ -25,6 +29,10 @@ class Product(models.Model):
     
     def __str__(self):
         return f'Продукт: {self.name} | Категория: {self.category.name}'
+    
+    class Meta:
+        verbose_name = 'Товар'
+        verbose_name_plural = 'Товары'
     
 
 class BasketQuerySet(models.QuerySet):
@@ -76,14 +84,18 @@ class Favourite(models.Model):
     
     def sum(self):
         return self.product.price * self.quantity
-    
+        
 
 class Reviews(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
     product = models.ForeignKey(to=Product, on_delete=models.CASCADE)
-    rating = models.IntegerField()
+    rating = models.DecimalField(max_digits=5, decimal_places=1)
     comment = models.TextField()
     created_date = models.DateField(auto_now_add=True)
 
     def __str__(self): 
         return f'Отзыв от пользователя {self.user.username} о товаре {self.product.name}' 
+    
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'

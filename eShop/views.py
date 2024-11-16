@@ -138,30 +138,36 @@ def search(request):
     return render(request, 'eShop/search.html', context)
     
 
-def reviews(request, product_id):
-    product = Product.objects.get(id=product_id)
-    review = Reviews.objects.filter(user=request.user, product=product)
-    context = {
-        'title': 'Отзывы',
-        'products': review
-    }
+# def reviews(request, product_id):
+#     product = Product.objects.get(id=product_id)
+#     context = {
+#         'title': 'Отзывы',
+#         'products': product
+#     }
 
-    return render(request, 'eShop/reviews.html', context)
+#     return render(request, 'eShop/reviews.html', context)
 
-
-def reviews_add(request):
+@login_required
+def reviews_add(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
     if request.method == 'POST':
         form = ReviewForm(data=request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Комментарий успешно добавлен!')
-            return HttpResponseRedirect(reverse('reviews'))  
+            # Reviews.objects.create(user=request.user, product=product)
+            review = form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
+            # messages.success(request, 'Комментарий успешно добавлен!')
+            return HttpResponseRedirect(request.META['HTTP_REFERER'])
     else:
         form = ReviewForm()
 
     context = {
         'title': 'Отзывы',
-        'form': form
+        'form': form,
+        'products': product,
+        'reviews': Reviews.objects.filter(product=product)
     }    
 
     return render(request, 'eShop/reviews.html', context)

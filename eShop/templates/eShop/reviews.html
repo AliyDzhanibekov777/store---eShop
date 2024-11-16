@@ -5,7 +5,7 @@
 {% block title %}{{ title }}{% endblock title %}
 
 {% block content %}
-<div class="container mt-5 vh-100">
+<div class="container mt-5 mb-5">
     <div class="row mb-5">
         <div class="col-12">
             <h2 class="section-title">
@@ -13,25 +13,53 @@
             </h2>
         </div>
     </div>
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-6 mb-5">
-            <form action="{% url 'reviews_add' %}" method="post" class="row g-4 mb-5 mt-2" id="form-contacts">
+    <div class="row content-reviews d-flex justify-content-center">
+        {% if products %}
+        <div class="col-md-8 d-flex container-div-reviews align-items-center">
+            <div class="col-md-6">
+                <img src="{{ products.image.url }}" alt="" class="img-reviews">                
+            </div>
+            <div class="col-md-6">
+                <h3 >{{ products.name }}</h3>
+                <h5 style="margin-top: 30px;">{{ products.description }}</h5>
+            </div>
+        </div>
+        {% endif %}
+        <div class="col-md-8 container-div-reviews">
+            <form action="{% url 'reviews_add' products.id %}" method="post" class="row g-4 mb-5 mt-2 form-reviews">
 
                 {% csrf_token %}
 
                 <div class="col-md-12">
-                    <label for="rating">Оценка товара</label>
-                    <input type="number" class="form-control" id="rating" placeholder="Ваша оценка">
+                    <label for="{{ form.rating.id_for_lable }}" class="form-lable">Оценка товара</label>
+                    {{ form.rating }}
                 </div>
                 <div class="col-md-12">
-                    <label for="comment">Напишите отзыв</label>
-                    <input type="text" class="form-control" id="comment" placeholder="Ваш отзыв">
+                    <label for="comment" class="form-label">Напишите отзыв</label>
+                    {{ form.comment }}
                 </div>
-                <div class="col-md-12 mb-4">
+                <div class="col-md-12">
                     <button type="submit" class="btn btn-warning">Отправить</button>
                 </div>
-
             </form>
+            <hr>
+        </div>
+        <div class="col-md-8 container-div-reviews">
+            <h5 class="mb-4" style="padding-left: 5px;">Отзывы клиентов</h5>
+            {% if reviews %}
+            {% for review in reviews %}
+            <div class="col-md-12 views-text">
+                <p><strong>Имя пользователя:</strong> {{ review.user }}</p>
+                <span><strong>Оценка:</strong> {{ review.rating }} <i class="fa-solid fa-star" style="color: #ffc107;"></i></span>
+                <p><strong>Отзыв:</strong> {{ review.comment }}</p>
+                <hr>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-md-12 mb-5 d-flex justify-content-center align-items-center">
+                <h4>Отзывов нет</h4>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
