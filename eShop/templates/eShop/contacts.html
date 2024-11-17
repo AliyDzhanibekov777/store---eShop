@@ -5,7 +5,7 @@
 {% block title %}{{ title }}{% endblock title %}
 
 {% block content %}
-<div class="container mt-5 vh-100">
+<div class="container mt-5 contacts-container">
     <div class="row mb-5">
         <div class="col-12">
             <h2 class="section-title">
@@ -43,69 +43,5 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="row d-flex justify-content-center">
-        <div class="row mb-4 col-md-8 ">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="row mb-5">
-        <div class="col-12">
-            <h2 class="section-title">
-                <span>Форма отправки сообщения</span>
-            </h2>
-        </div>
-    </div>
-
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-6 mb-5">
-            <form action="#" method="post" class="row g-4 mb-5 mt-2" id="form-contacts">
-
-                {% csrf_token %}
-
-                <div class="col-md-12">
-                    <label for="name">Ваше имя</label>
-                    <input type="text" class="form-control" id="name" placeholder="Введите ваше имя">
-                </div>
-                <div class="col-md-12">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Введите ваш email">
-                </div>
-                <div class="col-md-12">
-                    <label for="message">Сообщение</label>
-                    <textarea class="form-control" id="message" rows="3"
-                        placeholder="Введите ваше сообщение"></textarea>
-                </div>
-                <div class="col-md-12 mb-4">
-                    <button type="submit" class="btn btn-warning">Отправить</button>
-                </div>
-
-            </form>
-        </div>
-    </div> -->
 </div>
 {% endblock content %}

@@ -1,8 +1,8 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from django.core.mail import send_mail
 
-from django.contrib import messages
 from django.urls import reverse
 
 from eShop.models import ProductCategory, Product, Basket, Favourite, Reviews
@@ -138,15 +138,6 @@ def search(request):
     return render(request, 'eShop/search.html', context)
     
 
-# def reviews(request, product_id):
-#     product = Product.objects.get(id=product_id)
-#     context = {
-#         'title': 'Отзывы',
-#         'products': product
-#     }
-
-#     return render(request, 'eShop/reviews.html', context)
-
 @login_required
 def reviews_add(request, product_id):
     product = get_object_or_404(Product, id=product_id)
@@ -173,22 +164,21 @@ def reviews_add(request, product_id):
     return render(request, 'eShop/reviews.html', context)
 
 
-# def reviews_add(request, product_id):
-#     product = Product.objects.get(id=product_id)
-#     review = Reviews.objects.filter(user=request.user, product=product)
+def checkout(request):
+    basket = Basket.objects.filter(user=request.user).all()
+    if request.method == 'POST':
+        subject = 'Ваш заказ успешно оформлен'
+        message = f'Спасибо за заказ, {request.user.username}!\n\n' \
+                  f'Ваш заказ успешно оформлен.'
+        from_email = 'aliy.janibekov.777@mail.ru'
+        recipient_list = [request.user.email]
 
-#     if request.method == 'POST':
-#         form = ReviewForm(data=request.POST)
-#         if form.is_valid():
-#             form.save()
-#             messages.success(request, 'Комментарий успешно добавлен!')
-#             return HttpResponseRedirect(reverse('reviews'))  
-#     else:
-#         form = ReviewForm()
-
-#     context = {
-#         'title': 'Отзывы',
-#         'products': review
-#     }    
-
-#     return render(request, 'eShop/reviews.html', context)
+        send_mail(
+            subject,
+            message,
+            from_email,
+            recipient_list,
+            fail_silently=False,
+        )
+        basket.delete()  
+    return HttpResponseRedirect(reverse('home'))

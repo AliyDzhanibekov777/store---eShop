@@ -45,63 +45,12 @@
                                             <li><a class="dropdown-item" href="{% url 'admin:index' %}">Админ панель</a></li>
                                         {% else %}
                                             <li><a class="dropdown-item" href="{% url 'profile' %}">Профиль</a></li>
-                                            <li><a class="dropdown-item" href="#">Заказы</a></li>
                                         {% endif %}                                        
                                     </ul>
                                 </div>
-
-                                <!-- <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                                    <button type="button" class="btn btn-outline-warning">Профиль</button>
-                                    <button type="button" class="btn btn-outline-warning">Админ панель</button>
-                                    <button type="button" class="btn btn-outline-warning">Заказы</button>
-                                </div> -->
-
                             </div>
                         </div>
                         {% endif %}
-
-                        <!-- <div class="btn-group me-2">
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm btn-warning dropdown-toggle" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            Account
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Sign In</a></li>
-                                            <li><a class="dropdown-item" href="#">Sign Up</a></li>
-                                        </ul>
-                                    </div>
-                                </div> -->
-
-
-                        <!-- <div class="btn-group"> -->
-                        <!-- <div class="dropdown">
-                                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            Выбор языка
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item" href="#">RU</a></li>
-                                            <li><a class="dropdown-item" href="#">EN</a></li>
-                                        </ul>
-                                    </div> -->
-                        <!-- <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
-                                        <button type="button" class="btn btn-outline-primary active">RU</button>
-                                        <button type="button" class="btn btn-outline-primary">EN</button>
-                                    </div> -->
-                        <!-- </div> -->
-
-
-
-                        <!-- <div class="btn-group btn-group-sm me-2" role="group"
-                                    aria-label="Vertical radio toggle button group">
-                                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1"
-                                        autocomplete="off" checked>
-                                    <label class="btn btn-outline-warning" for="vbtn-radio1">RU</label>
-                                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2"
-                                        autocomplete="off">
-                                    <label class="btn btn-outline-warning" for="vbtn-radio2">EN</label>
-                                </div> -->
                     </div>
                 </div>
             </div> <!-- ./header-top -->
@@ -117,27 +66,13 @@
 
                         <div class="col-lg-4 text-end cart-buttons order-md-2 d-none d-lg-block">                            
                             <a href="{% url 'favourites' %}" class="btn p-2">
-                                <i class="fa-solid fa-heart"></i>
-                                <!-- <span class="badge text-bg-warning bg-warning cart-badge">0</span> -->
+                                <i class="fa-solid fa-heart"></i>                                
                                 <span class="auxiliary-text">Избранное</span>
                             </a>
                             <a class="btn p-2" href="{% url 'baskets' %}" >
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                <!-- <span class="badge text-bg-warning cart-badge bg-warning">{{ total_quantity }}</span> -->
+                                <i class="fa-solid fa-cart-shopping"></i>                                
                                 <span class="auxiliary-text">Корзина</span>
                             </a>
-                            <!-- <a class="btn p-2" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                <span class="badge text-bg-warning cart-badge bg-warning">0</span>
-                                <span class="auxiliary-text">Корзина</span>
-                            </a> -->
-
-                            <!-- <button type="button" class="btn p-2" data-bs-toggle="modal" 
-                            data-bs-target="#staticBackdrop">
-                                <i class="fa-solid fa-user"></i>
-                                <span class="auxiliary-text">Войти</span>
-                            </button> -->
 
                             {% if not user.is_authenticated %}
                             <a href="{% url 'login' %}" class="btn p-2">
@@ -168,59 +103,6 @@
                     </div>
                 </div>
             </div> <!-- ./header-middle -->
-
-            <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasCartLabel">Корзина</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="table-responsive">
-                        <table class="table offcanvasCart-table">
-                            <tbody>
-                                <tr>
-                                    <td class="product-img-td"><a href=""><img
-                                                src="{% static 'eShop/img/card/chair.png' %}" alt=""></a></td>
-                                    <td><a href="">Компьютерное кресло</a></td>
-                                    <td>$179</td>
-                                    <td>&times;1</td>
-                                    <td><button class="btn btn-danger"><i
-                                                class="fa-regular fa-circle-xmark"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td class="product-img-td"><a href=""><img
-                                                src="{% static 'eShop/img/card/coffamash.jpg' %}" alt=""></a></td>
-                                    <td><a href="">Coffe machine</a></td>
-                                    <td>$1990</td>
-                                    <td>&times;1</td>
-                                    <td><button class="btn btn-danger"><i
-                                                class="fa-regular fa-circle-xmark"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td class="product-img-td"><a href=""><img
-                                                src="{% static 'eShop/img/card/111.png' %}" alt=""></a></td>
-                                    <td><a href="">Asus Pro 6</a></td>
-                                    <td>$890</td>
-                                    <td>&times;1</td>
-                                    <td><button class="btn btn-danger"><i
-                                                class="fa-regular fa-circle-xmark"></i></button></td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="4" class="text-end">Total:</td>
-                                    <td>$3100</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-
-                    <div class="text-start">
-                        <a href="#" class="btn btn-outline-warning">Оформить заказ</a>
-                    </div>
-                </div>
-            </div> /offcanvas > /header-middle -->
-
         </header>
 
         <div class="header-bottom sticky-top">
@@ -233,98 +115,9 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="offcanvas offcanvas-start" id="offcanvasNavbar" tabindex="-1"
-                            aria-labelledby="offcanvasNavbarLabel">
-                            <!-- <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Каталог</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
-                            </div> -->
+                            aria-labelledby="offcanvasNavbarLabel">                            
                             <div class="offcanvas-body">
                                 <ul class="navbar-nav">
-                                    <!-- <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" role="button"
-                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">
-                                            <i class="fa-solid fa-bars"></i>
-                                            Каталог
-                                        </a>
-
-                                        <ul class="dropdown-menu dropdown-menu-start animate">
-                                            {% for category in categories %}
-                                            <li>
-                                                <a class="dropdown-item" href="{% url 'category' category.id %}">{{ category.name }}</a>
-                                            </li>
-                                            {% endfor %}
-                                        </ul>
-
-                                        <ul class="dropdown-menu dropdown-menu-start animate">
-                                            <li>
-                                                <a class="dropdown-item" href="#">Телевизоры</a>
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item" href="#">Ноутбуки</a>
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item" href="#">Смартфоны</a>
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item" href="#">Обогреватели</a>
-                                            </li>
-
-                                            <li class="nav-item dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#"
-                                                    data-bs-toggle="dropdown" data-bs-auto-close="outside">
-                                                    Комплектующие для ПК</a>
-                                                <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li>
-                                                        <a class="dropdown-item" href="#">Процессоры</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="#">Видеокарты</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="#">SSD накопители</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="nav-item dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#"
-                                                    data-bs-toggle="dropdown" data-bs-auto-close="outside">
-                                                    Бытовая техника</a>
-                                                <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li>
-                                                        <a class="dropdown-item" href="#">Стиральные машинки</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="#">Пылесосы</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="#">Обогреватели</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="nav-item dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#"
-                                                    data-bs-toggle="dropdown" data-bs-auto-close="outside">
-                                                    Кухонная техника</a>
-                                                <ul class="dropdown-menu dropdown-menu-end">
-                                                    <li>
-                                                        <a class="dropdown-item" href="#">Холодильники</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="#">Кофемашинка</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item" href="#">SSD накопители</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li> -->
                                     <li class="nav-item">                                        
                                         <a class="nav-link" aria-current="page" href="{% url 'catalog' %}">
                                             <i class="fa-solid fa-bars"></i> Каталог
@@ -349,19 +142,12 @@
                         <div class="d-block d-lg-none">
                             <a href="{% url 'favourites' %}" class="btn">
                                 <i class="fa-solid fa-heart"></i>
-                                <!-- <span class="badge text-bg-warning bg-warning cart-badge">0</span> -->
                             </a>
 
                             
                             <a href="{% url 'baskets' %}" class="btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </a>
-
-                            <!-- <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
-                                aria-controls="offcanvasCart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                <span class="badge text-bg-warning cart-badge bg-warning">0</span>
-                            </button> -->
 
                             <a href="#" class="btn">
                                 <i class="fa-solid fa-user"></i>

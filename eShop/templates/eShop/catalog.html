@@ -14,14 +14,6 @@
 		</div>
 
 		{% for category in categories %}
-
-		<!-- <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-            <div class="product-card">
-                <h4><a href="{% url 'category' category.id %}">{{ category.name }}</a></h4>
-            </div>
-        </div> -->
-
-
 		<div class="col-lg-3 col-md-4 col-sm-6 mb-3 mt-4">
 			<div class="card" id="catalog-card">
 				<a href="{% url 'category' category.id %}"

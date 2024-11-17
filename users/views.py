@@ -68,17 +68,7 @@ def profile(request):
 
 @login_required
 def baskets(request):
-    baskets = Basket.objects.filter(user=request.user)
-    
-    # total_sum = sum([basket.sum() for basket in baskets]) 
-    # total_quantity = sum([basket.quantity for basket in baskets])
-    
-    # total_sum = 0
-    # total_quantity = 0
-    # for basket in baskets:
-    #     total_sum += basket.sum()
-    #     total_quantity += basket.quantity
-    
+    baskets = Basket.objects.filter(user=request.user) 
     context = {
         'title': 'Корзина',
         'baskets': baskets,
@@ -90,11 +80,6 @@ def baskets(request):
 @login_required
 def favourites(request):
     favourites = Favourite.objects.filter(user=request.user)
-    
-    # total_sum = 0
-    # for favourite in favourites:
-    #     total_sum += favourite.sum()
-    
     context = {
         'title': 'Корзина',
         'favourites': favourites,    

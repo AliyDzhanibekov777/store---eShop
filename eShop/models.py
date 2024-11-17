@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 class ProductCategory(models.Model):
     name = models.CharField(max_length=128, unique=True)
     image = models.ImageField(upload_to='categoty_images', default='categoty_images/dafault.jpg')
-    # description = models.TextField(null=True, blank=True)
     
     def __str__(self):
         return self.name
@@ -62,14 +61,6 @@ class Basket(models.Model):
     def sum(self):
         return self.product.price * self.quantity
     
-    # def total_sum(self):
-    #     baskets = Basket.objects.filter(user=self.user) 
-    #     return sum([basket.sum() for basket in baskets]) #функция sum которая используется не в цикле for, является встроенной в питон функцией
-    
-    # def total_quantity(self):
-    #     baskets = Basket.objects.filter(user=self.user)
-    #     return sum([basket.quantity for basket in baskets])
-    
     
 class Favourite(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
@@ -84,6 +75,13 @@ class Favourite(models.Model):
     
     def sum(self):
         return self.product.price * self.quantity
+
+
+class ReviewsQuerySet(models.QuerySet):
+    def average(self):
+        total = sum([num.rating for num in self])
+        cnt = len([num.rating for num in self])
+        return total / cnt
         
 
 class Reviews(models.Model):
@@ -92,6 +90,8 @@ class Reviews(models.Model):
     rating = models.DecimalField(max_digits=5, decimal_places=1)
     comment = models.TextField()
     created_date = models.DateField(auto_now_add=True)
+    
+    objects = ReviewsQuerySet.as_manager()
 
     def __str__(self): 
         return f'Отзыв от пользователя {self.user.username} о товаре {self.product.name}' 

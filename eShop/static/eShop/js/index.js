@@ -1,19 +1,3 @@
-
-// const offcanvasCartEl = document.getElementById('offcanvasCart');
-// const offcanvasCart = new bootstrap.Offcanvas(offcanvasCartEl);
-
-// document.querySelectorAll('.closecart').forEach(item => {
-//     item.addEventListener('click', (e) => {
-//         e.preventDefault;
-//         offcanvasCart.hide();
-//         let href = item.dataset.href;
-//         offcanvasCartEl.addEventListener('hidden.bs.offcanvas', () => {
-//             document.getElementById(href).scrollIntoView();
-//         })
-//     })
-// })
-
-
 $(document).ready(function () {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {

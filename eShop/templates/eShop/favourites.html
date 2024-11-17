@@ -29,7 +29,7 @@
                 <div class="product-thumb">
                     <a href="#"><img src="{{ favourite.product.image.url }}" alt=""></a>
                 </div>
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-start views-a">
                     <a href="{% url 'reviews_add' favourite.product.id %}">Отзывы</a>
                 </div>
                 <div class="product-details">
@@ -38,19 +38,12 @@
                     </h4>
                     <p class="product-excerpt">
                         {{ favourite.product.description }}  
-                        <!-- <input type="number" name="basketID" class="form-control" value="{{ basket.quantity }}" min="0">   -->                                       
                     </p>
                     <div class="product-bottom-details d-flex justify-content-between">
                         <span>x{{ favourite.quantity }}</span>
                         <div class="product-price">
                             ${{ favourite.sum }}
-                        </div> 
-                        
-                        <!-- <div class="product-links">
-                            <a href="#" class="btn btn-warning add-to-cart">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </a>
-                        </div> -->
+                        </div>                     
                     </div>
                     <div class="d-flex justify-content-between mt-3">
                         <a href="{% url 'fav_in_bas' favourite.product_id %}" class="btn btn-warning add-to-cart">
@@ -66,23 +59,12 @@
 
         {% endfor %}
       
-        <div class="mt-5 mb-5">
-            <!-- <div class="d-flex justify-content-start mt-2">
-                <h5>
-                    Колличество товаров: <span style="font-size: 23px; font-weight: bold; color: #ffc107;">{{ total_quantity }}</span>
-                </h5>
-            </div> -->
+        <div class="mt-5 mb-5">          
             <div class="d-flex justify-content-start mt-2">
                 <h5>
                     Итоговая сумма: <span style="font-size: 23px; font-weight: bold; color: #ffc107;">${{ favourites.total_sum }}</span>
                 </h5>
-            </div> 
-            
-            <!-- <div class="d-flex justify-content-start mt-4">
-                <a href="{% url 'fav_in_bas' favourites.first.product_id %}" class="btn btn-warning">
-                    Добавить в корзину
-                </a>   
-            </div> -->
+            </div>          
         </div>       
     </div>
 

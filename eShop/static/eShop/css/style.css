@@ -135,10 +135,6 @@ ul.social-icons a:hover {
     color: var(--accent-color);
 }
 
-/* .header-top .btn{
-    background-color: #fff;
-} */
-
 .header-logo {
     text-decoration: none;
     text-transform: none;
@@ -198,50 +194,10 @@ ul.social-icons a:hover {
 .animate {
     animation-duration: .3s;
 }
-/* 
-@keyframes slideIn {
-    0% {
-        transform: translateY(1rem);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    0% {
-        transform: translateY(1rem);
-        opacity: 0;
-    }
-} */
-
-/* .slideIn {
-    animation-name: slideIn;
-}
-
-@media all and (min-width: 992px) {
-    .navbar-nav .nav-item .dropdown-menu {
-        display: none;
-    }
-
-    .navbar-nav .nav-item:hover .dropdown-menu {
-        display: block;
-    }
-} */
 
 .navbar a {
     transition: all .3s;
 }
-
-/* .slide {
-    margin: 0 auto;
-}
-
-#carouselExampleIndicators {
-    height: 500px;
-    overflow: hidden;
-} */
 
 .auxiliary-text {
     display: block;
@@ -682,4 +638,9 @@ section.google-maps {
 
 .views-a:hover a {
     text-decoration: none;
+}
+
+.contacts-container,
+.delivery-container {
+    min-height: 100vh;
 }

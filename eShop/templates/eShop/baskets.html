@@ -29,7 +29,7 @@
                 <div class="product-thumb">
                     <a href="#"><img src="{{ basket.product.image.url }}" alt=""></a>
                 </div>
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-start views-a">
                     <a href="{% url 'reviews_add' basket.product.id %}">Отзывы</a>
                 </div>
                 <div class="product-details">
@@ -38,19 +38,12 @@
                     </h4>
                     <p class="product-excerpt">
                         {{ basket.product.description }}
-                        <!-- <input type="number" name="basketID" class="form-control" value="{{ basket.quantity }}" min="0">   -->
                     </p>
                     <div class="product-bottom-details d-flex justify-content-between">
                         <span>x{{ basket.quantity }}</span>
                         <div class="product-price">
                             ${{ basket.sum }}
                         </div>
-
-                        <!-- <div class="product-links">
-                            <a href="#" class="btn btn-warning add-to-cart">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </a>
-                        </div> -->
                     </div>
                     <div class="d-flex justify-content-center mt-3">
                         <a href="{% url 'basket_remove' basket.id %}" class="btn btn-danger add-to-cart">
@@ -76,9 +69,10 @@
                 </h5>
             </div>
             <div class="d-flex justify-content-start mt-4">
-                <button type="submit" class="btn btn-warning">
-                    Оформить заказ
-                </button>
+                <form action="{% url 'checkout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-warning">Оформить заказ</button>
+                </form>
             </div>
         </div>
     </div>
