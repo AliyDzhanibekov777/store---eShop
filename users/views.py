@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import auth, messages
 from django.urls import reverse
@@ -5,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from eShop.models import Basket, Favourite
+
+import json
 
 
 def login(request):
@@ -86,3 +89,7 @@ def favourites(request):
     }
     
     return render(request, 'eShop/favourites.html', context)
+
+
+def pink(request):
+    return JsonResponse({'response':'ponk'})

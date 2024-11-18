@@ -19,11 +19,14 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+from users import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('eShop.urls')),
-    path('users/', include('users.urls'))
+    path('users/', include('users.urls')),
+    path('pink/', views.pink, name='pink')
 ]
 
 if settings.DEBUG:
