@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
@@ -172,13 +173,17 @@ def checkout(request):
                   f'Ваш заказ успешно оформлен.'
         from_email = 'aliy.janibekov.777@mail.ru'
         recipient_list = [request.user.email]
-
-        send_mail(
-            subject,
-            message,
-            from_email,
-            recipient_list,
-            fail_silently=False,
-        )
-        basket.delete()  
+        
+        try:
+            send_mail(
+                subject,
+                message,
+                from_email,
+                recipient_list,
+                fail_silently=False
+            )
+            basket.delete()
+        except Exception as e:
+            return HttpResponseRedirect(request.META['HTTP_REFERER'])
+        
     return HttpResponseRedirect(reverse('home'))
